@@ -6,40 +6,46 @@ public class Bullet : MonoBehaviour
 {
 
     [SerializeField]
-    private int _dammage = 2;
-
-    [SerializeField]
-    private float _lifeSpan = 5.0f;
+    public int _dammage = 0;
+    public float speed;
     private float timer;
 
 
-    public void OnDetection(Ennemy enemy)
+    void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("touche");
-
-        //Detruire les bullet au contact d'un ennemy.
-        Destroy(gameObject);
+        var _enemyComponent = other.GetComponent<Ennemy>();
+        if (_enemyComponent != null)
+        {
+            _enemyComponent.PV-=_dammage;
+            if (_enemyComponent.PV<=0)
+            {
+                Destroy(other.gameObject);
+            }
+            Destroy(gameObject);
+        }
+        
     }
-
-
-
-    // Update is called once per frame
-    void Update()
+    
+    void BulletMove()
     {
-        //Je me deplace
-
-        //Check si j'ai vecu assez longtemps
-        CheckLifeSpan();
-
+        transform.position = transform.position+(transform.forward*speed);
     }
 
+    
     private void CheckLifeSpan()
     {
         timer += Time.deltaTime;
-        if (timer >= _lifeSpan)
+        if (timer >= 5.0f)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
+    }
+
+    void Update()
+    {
+            BulletMove();
+            CheckLifeSpan();
     }
 
 

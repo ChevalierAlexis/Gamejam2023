@@ -4,38 +4,38 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    private float speed;
-    private int degats;
+    public float vitesse;
+    public int degats;
     public float attackSpeed;
     public GameObject ammo;
     public List<GameObject> bulletList;
-    private float timer;
+    private float compteur;
+    public Player zePlayer;
+
+    void Start()
+    {
+        ammo.GetComponent<Bullet>()._dammage = degats;
+        ammo.GetComponent<Bullet>().speed = vitesse;
+    }
 
     public virtual void pattern()
     {
         
     }
 
-    void BulletMove(GameObject bulletToMove)
-    {
-        bulletToMove.transform.position = bulletToMove.transform.position+(gameObject.transform.forward*speed);
-    }
+
 
     void Update()
     {
-        foreach(GameObject bullet in bulletList)
+       
+        compteur-=Time.deltaTime;
+        if(compteur<=0)
         {
-            BulletMove(bullet);
-            CheckLifeSpan(bullet);
+            pattern();
+            compteur = attackSpeed;
         }
     }
 
-    private void CheckLifeSpan(GameObject bulletToCheck)
-    {
-        timer += Time.deltaTime;
-        if (timer >= 2.0f)
-        {
-            Destroy(bulletToCheck);
-        }
-    }
+
+
 }
