@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private int PV = 100;
-    private float speed = 100f;
+    private float speed = 0.01f;
     public Attack AttackPattern;
     private float compteur;
 
@@ -30,18 +30,18 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Z))
             {
-                transform.Translate(0, 0, speed);
+                transform.Translate(0, speed, speed);
             }
 
         if (Input.GetKey(KeyCode.S))
             {
-               transform.Translate(0, 0, -speed);
+               transform.Translate(0, -speed, -speed);
             }
         compteur-=Time.deltaTime;
         if(compteur<=0)
         {
-            
-            compteur = AttackPattern.speed;
+            AttackPattern.pattern();
+            compteur = AttackPattern.attackSpeed;
         }
     }
 }
