@@ -17,10 +17,10 @@ public class Ennemy : MonoBehaviour
     void Update()
     {
         float step = speed*Time.deltaTime;
-         transform.position = Vector2.MoveTowards(transform.position, target, step);
-         if (Distance(transform.position,target.transform.position)<5f)
+         transform.position = Vector2.MoveTowards(transform.position, target.transform.position, step);
+         if (Vector2.Distance(transform.position,target.transform.position)<5f)
          {
-            EnnemyAttack()
+            EnnemyAttack();
          }
     }
     void EnnemyAttack()
