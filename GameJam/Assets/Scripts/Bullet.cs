@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     public int _dammage = 0;
     public float speed;
     private float timer;
+    public int traversable;
 
 
     void OnTriggerEnter2D(Collider2D other)
@@ -22,7 +23,12 @@ public class Bullet : MonoBehaviour
             {
                 Destroy(other.gameObject);
             }
-            Destroy(gameObject);
+            traversable-=1;
+            if (traversable<=0)
+            {
+                Destroy(gameObject);
+            }
+            
         }
         
     }
