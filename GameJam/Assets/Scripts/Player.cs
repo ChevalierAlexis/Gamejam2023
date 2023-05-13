@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private int PV = 100;
+    public int PV = 100;
     private float speed = 0.01f;
     public Attack AttackPattern;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -21,11 +15,13 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.Q))
             {
                 transform.Translate(-speed, 0, 0);
+                this.GetComponent<SpriteRenderer>().flipX=true;
             }
 
         if (Input.GetKey(KeyCode.D))
             {
                 transform.Translate(speed, 0, 0);
+                this.GetComponent<SpriteRenderer>().flipX=false;
             }
 
         if (Input.GetKey(KeyCode.Z))
@@ -37,6 +33,6 @@ public class Player : MonoBehaviour
             {
                transform.Translate(0, -speed, -speed);
             }
-
+  
     }
 }

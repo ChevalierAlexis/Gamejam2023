@@ -5,19 +5,16 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     private float compteur;
-    private float tempsRespawn;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float tempsRespawn;
+    public List<GameObject> EnnemisASpawner;
 
-    // Update is called once per frame
     void Update()
     {
         compteur -= Time.deltaTime;
         if (compteur <= 0)
         {
+            var choixEnnemi = Random.Range(0,EnnemisASpawner.Count);
+            GameObject EnnemiSpawne = Instantiate(EnnemisASpawner[choixEnnemi], transform.position, Quaternion.identity);
             compteur = tempsRespawn;
         }
     }
