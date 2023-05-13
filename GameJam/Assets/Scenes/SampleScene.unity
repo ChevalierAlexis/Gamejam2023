@@ -239,7 +239,7 @@ MonoBehaviour:
   attackSpeed: 1
   ammo: {fileID: 6959448573626396924, guid: 3ba696af262105044a37124d076c1f99, type: 3}
   zePlayer: {fileID: 27399050}
-  traverse: 1
+  traverse: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,12 +356,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6022070047853193752, guid: f263b86392f1bba40a99ce074be2ee4a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022070047853193752, guid: f263b86392f1bba40a99ce074be2ee4a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022070047853193752, guid: f263b86392f1bba40a99ce074be2ee4a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.69
+      value: -9.15
       objectReference: {fileID: 0}
     - target: {fileID: 6022070047853193752, guid: f263b86392f1bba40a99ce074be2ee4a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.33
+      value: 4.01
       objectReference: {fileID: 0}
     - target: {fileID: 6022070047853193752, guid: f263b86392f1bba40a99ce074be2ee4a, type: 3}
       propertyPath: m_LocalPosition.z

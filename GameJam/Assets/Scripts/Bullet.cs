@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
             {
                 Destroy(other.gameObject);
             }
-            traversable-=1;
+            traversable = traversable-1;
             if (traversable<=0)
             {
                 Destroy(gameObject);
