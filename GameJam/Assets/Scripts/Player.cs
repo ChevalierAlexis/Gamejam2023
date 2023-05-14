@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int PV = 100;
-    private float speed = 0.01f;
+    private float speed = 0.003f;
     public Attack AttackPattern;
 
 

@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 27399050}
   - component: {fileID: 27399053}
   - component: {fileID: 27399054}
+  - component: {fileID: 27399055}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -237,12 +238,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6aa760db1b43084cb8d867c63c31761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesse: 0.2
+  vitesse: 0.05
   degats: 1
   attackSpeed: 1
   ammo: {fileID: 6959448573626396924, guid: 3ba696af262105044a37124d076c1f99, type: 3}
   zePlayer: {fileID: 27399050}
-  traverse: 2
+  traverse: 1
 --- !u!95 &27399054
 Animator:
   serializedVersion: 4
@@ -263,6 +264,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &27399055
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27399049}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &68340025
 GameObject:
   m_ObjectHideFlags: 0
