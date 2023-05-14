@@ -9,8 +9,8 @@ public class Bullet : MonoBehaviour
     public int _dammage = 0;
     public float speed;
     private float timer;
-    public int traversable;
-
+    public int traversable = 1;
+    public List<Sprite> SpriteList;
 
     void OnTriggerEnter2D(Collider2D other)
     {
